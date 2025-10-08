@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <div class="main-column">
+<div class="main-column">
     <main>
         <?php
         if (have_posts()):
@@ -10,9 +10,9 @@
             endwhile;
         endif;
         ?>
-</main>
+    </main>
 
-<?php get_sidebar(); ?>
+    <?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>
