@@ -9,8 +9,7 @@
 
 <body <?php body_class(); ?>>
 
+<div id="page">
+        <header id="top">
 
-        <header>
-            <h1><?php bloginfo('name'); ?></h1>
-            <p><?php bloginfo('description'); ?></p>
         </header>

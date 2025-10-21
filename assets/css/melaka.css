@@ -1,34 +1,74 @@
-body{
-  font-family: system-ui, sans-serif;
-  margin: 0;
 
-  background-image: url("fond.jpg");
-  background-repeat: repeat;
-  background-position: top left;
+
+body {
+	margin: 0;
+	padding: 0;
+  background: #32824F url(img/fond.jpg) fixed repeat;
+	color: #6b6b6b;
+	font: 62.5% "Lucida Grande",Arial,sans-serif;  /* verdana, arial, helvetica, sans-serif */
+}
+/** we kept id selector because it's a 
+ *  direct port of previous
+ *  dotclear theme
+ */
+ #page {
+  font-size: 1.2em;
 }
 
+#top {
+  height: 200px;
+  width: 950px;
+  margin: 30px auto 4px auto;
+  background-image: url("img/headers.png");
+}
 .wp-block-group {
   box-sizing: border-box;
 }
 
-aside {
-  background: #f9f9f9;
-  border-left: 1px solid #ddd;
-}
-
-.main-column {
+#wrapper {
   width: 950px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
+  overflow: hidden;
+  margin: 0px auto 0 auto;
+  padding: 0 0 10px 0;
+  background: transparent url("img/page-bg.png") repeat-y top left;
 }
 
-main {
-  width: 700px;
-  padding: 0 25px 0 25px;
+#main {
+  width: 750px;
+  float: left;
+  background-color: #fff;
 }
 
-aside {
-  width: 250px;
+#content {
+  padding: 0 25px;
+}
+
+#sidebar {
+  width: 200px;
+  float: right;
+}
+#blognav, #blogextra {
+  padding: 30px 20px 1px 20px;
+}
+
+
+#footer {
+  clear: both;
+  padding: 20px 0 0 0;
+  background: transparent url("img/page-b.png") no-repeat top center;
+  min-width: 950px;
+}
+#footer p {
+  margin: 0 auto;
+  padding: 10px 0 20px;
+  background: transparent;
+  color: #B7CCBE;
+  text-align: center;
+  font-size: 11px;
+}
+
+a {
+  color: #4E9A60;
+  text-decoration: none;
+  outline: none;
 }

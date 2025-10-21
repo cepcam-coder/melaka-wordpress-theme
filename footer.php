@@ -1,7 +1,9 @@
-<footer style="text-align:center;padding:10px 0;max-width:950px;margin:0 auto;">
+<footer id="footer">
     <p>© 2025 - Mentions légales | Par Cepcam</p>
 </footer>
 <?php wp_footer(); ?>
+<!-- End of #page -->
+</div>
 </body>
 
 </html>
