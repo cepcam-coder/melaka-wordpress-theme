@@ -8,6 +8,6 @@
     </div>
 
     <div id="blogextra">
-        
+        <?php comics_list(2) ?>
     </div>
 </aside>
