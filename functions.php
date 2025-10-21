@@ -15,7 +15,7 @@ function melaka_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'melaka_enqueue_styles');
 
 
-/*  For boks, and comics, we create a custom type */
+/*  For books, and comics, we create a custom type */
 function create_livres_cpt() {
     $labels = array(
         'name' => 'Livres',
@@ -123,3 +123,6 @@ function comics_list($count = 5) {
         echo '<p>Aucun livre pour l’instant.</p>';
     }
 }
+
+/** Dont auto scaled  */
+add_filter( 'big_image_size_threshold', '__return_false' );

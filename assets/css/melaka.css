@@ -25,6 +25,13 @@ body {
   box-sizing: border-box;
 }
 
+.wp-block-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
 #wrapper {
   width: 950px;
   overflow: hidden;
