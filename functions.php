@@ -98,22 +98,21 @@ function comics_list($count = 5) {
     $livres = new WP_Query($args);
 
     if ($livres->have_posts()) {
-        echo '<div class="livres-sidebar">';
+        echo '<div>';
         while ($livres->have_posts()) {
             $livres->the_post();
 
             $titre = get_the_title();
-            $date  = get_the_date('Y');
             $image = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
 
 
             $lien = get_post_meta(get_the_ID(), '_lien_livre', true);
             if (!$lien) $lien = '#'; // fallback
 
-            echo '<div class="livre-item">';
+            echo '<div>';
             echo '<a href="' . esc_url($lien) . '" target="_blank">';
             echo $image;
-            echo '<div class="livre-meta">';
+            echo '<div>';
             echo '<h4>' . esc_html($titre) . '</h4>';
             echo '</div></a></div>';
         }
@@ -138,3 +137,98 @@ function show_all_posts_in_date_archives( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'show_all_posts_in_date_archives' );
+
+
+/** Replace Blogroll */
+function cpt_lien_register() {
+
+    $labels = array(
+        'name'                  => _x( 'Liens', 'Post Type General Name', 'text_domain' ),
+        'singular_name'         => _x( 'Lien', 'Post Type Singular Name', 'text_domain' ),
+        'menu_name'             => __( 'Liens', 'text_domain' ),
+        'name_admin_bar'        => __( 'Lien', 'text_domain' ),
+        'add_new_item'          => __( 'Ajouter un nouveau lien', 'text_domain' ),
+        'edit_item'             => __( 'Éditer le lien', 'text_domain' ),
+        'view_item'             => __( 'Voir le lien', 'text_domain' ),
+    );
+
+    $args = array(
+        'label'                 => __( 'Lien', 'text_domain' ),
+        'labels'                => $labels,
+        'public'                => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'supports'              => array( 'title' ),
+        'has_archive'           => false,
+        'show_in_rest'          => true,
+    );
+
+    register_post_type( 'lien', $args );
+
+}
+add_action( 'init', 'cpt_lien_register', 0 );
+
+// Ajouter un champ URL personnalisé
+function lien_add_custom_meta_box() {
+    add_meta_box(
+        'lien_url_meta_box',
+        'URL du lien',
+        'lien_url_meta_box_callback',
+        'lien',
+        'normal',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'lien_add_custom_meta_box' );
+
+function lien_url_meta_box_callback( $post ) {
+    wp_nonce_field( 'lien_save_meta_box_data', 'lien_meta_box_nonce' );
+    $value = get_post_meta( $post->ID, '_lien_url', true );
+    echo '<label for="lien_url_field">URL :</label> ';
+    echo '<input type="url" id="lien_url_field" name="lien_url_field" value="' . esc_attr( $value ) . '" size="50" />';
+}
+
+function lien_save_meta_box_data( $post_id ) {
+    if ( ! isset( $_POST['lien_meta_box_nonce'] ) ) {
+        return;
+    }
+    if ( ! wp_verify_nonce( $_POST['lien_meta_box_nonce'], 'lien_save_meta_box_data' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( isset( $_POST['lien_url_field'] ) ) {
+        update_post_meta( $post_id, '_lien_url', esc_url_raw( $_POST['lien_url_field'] ) );
+    }
+}
+add_action( 'save_post', 'lien_save_meta_box_data' );
+
+
+
+function blogroll() {
+    $args = array(
+        'post_type'      => 'lien',
+        'posts_per_page' => -1, 
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        echo '<ul class="blogroll-list">';
+        while ($query->have_posts()) {
+            $query->the_post();
+            $url = get_post_meta(get_the_ID(), '_lien_url', true);
+            $title = get_the_title();
+            if ($url) {
+                echo '<li class="blogroll-item"><a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">' . esc_html($title) . '</a></li>';
+            }
+        }
+        echo '</ul>';
+        wp_reset_postdata();
+    } else {
+        echo '<p>Aucun lien trouvé.</p>';
+    }
+}

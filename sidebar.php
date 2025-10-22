@@ -92,8 +92,8 @@
         </section>
         <hr class="doodle-separator doodle-5">
 
-        <section class="sidebar-section">
-            <h4>Liens vers mes amis</h4>
+        <section class="sidebar-section">        
+            <?php blogroll(); ?>
         </section>
         <hr class="doodle-separator doodle-6">
 

@@ -312,11 +312,11 @@ a {
 }
 
 .day-date {
-    font-size: 11px;
-    margin: -37px 0 0px 135px;
-    text-align: right;
-    color: #6B6B6B;
-    border-bottom: 0.5px solid #4E9A60;
+  font-size: 11px;
+  margin: -37px 0 0px 135px;
+  text-align: right;
+  color: #6b6b6b;
+  border-bottom: 0.5px solid #4e9a60;
 }
 
 /** Sidebar archives list */
@@ -333,7 +333,7 @@ a {
   padding: 0 0 0px 0;
   border: none;
 }
-.archive-year li {
+.archive-year li{
   display: list-item;
   margin: 0.5em 0 0 0;
   padding: 0 0;
@@ -351,7 +351,6 @@ a {
 .archive-year li a:hover {
   color: #d3373b;
 }
-
 
 /** sidebar hack to display  picture */
 .laec {
@@ -376,4 +375,16 @@ a {
   height: 430px;
   background-size: cover;
   background-image: url("img/tipeee.jpg");
+}
+
+
+.blogroll-list {
+  padding: 2px 0;
+}
+.blogroll-item {
+  text-decoration: none;
+  list-style: none;
+  list-style-position: outside;
+  border-top: 1px solid #d3373b;
+  padding: 2px 0;
 }
