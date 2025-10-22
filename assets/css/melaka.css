@@ -351,3 +351,29 @@ a {
 .archive-year li a:hover {
   color: #d3373b;
 }
+
+
+/** sidebar hack to display  picture */
+.laec {
+  display: block;
+  width: 169px;
+  height: 338px;
+  background-size: cover;
+  background-image: url("img/laecBDmini.png");
+}
+
+.mazette {
+  display: block;
+  width: 170px;
+  height: 91px;
+  background-size: cover;
+  background-image: url("img/mazette170.jpg");
+}
+
+.tipee {
+  display: block;
+  width: 170px;
+  height: 430px;
+  background-size: cover;
+  background-image: url("img/tipeee.jpg");
+}

@@ -36,12 +36,12 @@
 
                     <summary><?php echo $year ?></summary>
                     <ul>
-                    <?php foreach ($months as $month => $posts) { ?>
-                        <li><a href="<?php echo esc_url(get_month_link($year, $month)); ?>">
-                            <?php echo date_i18n('F', mktime(0, 0, 0, $month, 1)); ?>
-                            (<?php echo count($posts); ?>)
-                        </a></li>
-                    <?php } // ends foreach for $months ?>
+                        <?php foreach ($months as $month => $posts) { ?>
+                            <li><a href="<?php echo esc_url(get_month_link($year, $month)); ?>">
+                                    <?php echo date_i18n('F', mktime(0, 0, 0, $month, 1)); ?>
+                                    (<?php echo count($posts); ?>)
+                                </a></li>
+                        <?php } // ends foreach for $months ?>
                     </ul>
                 </details>
                 <?php
@@ -52,18 +52,43 @@
 
 
         <section class="sidebar-section">
-            <?php comics_list(2) ?>
+            <h2>Albums</h2>
+            <?php comics_list(3) ?>
         </section>
         <hr class="doodle-separator doodle-3">
 
 
         <section class="sidebar-section">
-            <h4> L'avenir en commun et mazette</h4>
+            <p><a href="https://bd.laec.fr" target="_blank"
+                    title="le programme de l'Union Populaire en BD, par Mélaka &amp; Reno">Pour lire la BD "l'Avenir en
+                    commun ?", cliquez ici !</a></p>
+        </section>
+        <section class="sidebar-section">
+            <p>Pour télécharger le PDF en haute définition de la BD "L'Avenir en commun ?", cliquez sur l'image !</p>
+
+            <figure style="float: left; margin: 0 1em 1em 0;"><a class="laec"
+                    href="https://melaka.free.fr/JLM2017/LAECBD2022.pdf">
+                </a>
+
+                <figcaption>laecBDmini.png, fév. 2022</figcaption>
+            </figure>
+        </section>
+        <section class="sidebar-section">
+            <div class="widget text">
+                <h2>Abonnez-vous !</h2>
+                <p><strong>&nbsp;</strong><span class="mazette"></span><a
+                        href="https://melaka.free.fr/imagesweb/dossierpresse.pdf">C'est quoi, Mazette ?</a></p>
+
+                <p><a href="https://mazette.media">Mazette a cessé de paraître, mais tous les numéros sont consultables
+                        en cliquant ici</a></p>
+            </div>
         </section>
         <hr class="doodle-separator doodle-4">
 
         <section class="sidebar-section">
-            <h4>Mon tipee</h4>
+            <p><br id="sites">
+                <a class="tipee" href="https://www.tipeee.com/melakarnets"></a>
+            </p>
         </section>
         <hr class="doodle-separator doodle-5">
 
