@@ -4,6 +4,18 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="comments">
+
+<?php if ( comments_open() ) : ?>
+    <div id="respond">
+        <h4>Laisser un commentaire</h4>
+        <?php comment_form(array(
+            'title_reply' => '',
+            'comment_notes_after' => '',
+            'label_submit' => 'Envoyer'
+        )); ?>
+    </div>
+<?php endif; ?>
+
 <h3>Commentaires</h3>
 
 <?php if ( have_comments() ) : ?>
@@ -37,14 +49,4 @@ if ( post_password_required() ) {
     </dl>
 <?php endif; ?>
 
-<?php if ( comments_open() ) : ?>
-    <div id="respond">
-        <h4>Laisser un commentaire</h4>
-        <?php comment_form(array(
-            'title_reply' => '',
-            'comment_notes_after' => '',
-            'label_submit' => 'Envoyer'
-        )); ?>
-    </div>
-<?php endif; ?>
 </div>

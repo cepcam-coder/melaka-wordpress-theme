@@ -9,7 +9,7 @@
 
 
         <section class="sidebar-section">
-            <h4>Archives</h4>
+            <h4 class="brown">Archives</h4>
             <?php
             $all_posts = get_posts(array(
                 'posts_per_page' => -1 // to show all posts
@@ -32,16 +32,17 @@
 
             // iterates the years
             foreach ($ordered_posts as $year => $months) { ?>
-                <details>
+                <details class="archive-year">
 
                     <summary><?php echo $year ?></summary>
+                    <ul>
                     <?php foreach ($months as $month => $posts) { ?>
-                        <a href="<?php echo esc_url(get_month_link($year, $month)); ?>">
+                        <li><a href="<?php echo esc_url(get_month_link($year, $month)); ?>">
                             <?php echo date_i18n('F', mktime(0, 0, 0, $month, 1)); ?>
                             (<?php echo count($posts); ?>)
-                        </a>
+                        </a></li>
                     <?php } // ends foreach for $months ?>
-
+                    </ul>
                 </details>
                 <?php
             } // ends foreach for $ordered_posts

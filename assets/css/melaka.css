@@ -5,6 +5,17 @@ body {
   color: #6b6b6b;
   font: 62.5% "Lucida Grande", Arial, sans-serif; /* verdana, arial, helvetica, sans-serif */
 }
+
+/** colors and style */
+
+.brown {
+  color: #96580f;
+}
+
+h2 {
+  font-size: 1.4em;
+  color: #4e9a60;
+}
 /** we kept id selector because it's a 
  *  direct port of previous
  *  dotclear theme
@@ -86,7 +97,7 @@ body {
 }
 .post-info {
   margin: 0 0 19px 0;
-  color: #6B6B6B;
+  color: #6b6b6b;
   font-size: 0.8em;
 }
 
@@ -97,124 +108,129 @@ body {
 /* Comments and trackbacks
 -------------------------------------------------------- */
 #comments {
-	clear: both;
+  clear: both;
 }
-#comments h3, #comment-form h3, #pings h3 {
-	border-width: 1px 0;
-	border-style: solid;
-	border-color: #bfbfbf;
-	background: #fbfbfb;
-	padding: 5px;
-	margin: 20px 0 8px 0;
-	font-size: 1.2em;
+#comments h3,
+#comment-form h3,
+#pings h3 {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #bfbfbf;
+  background: #fbfbfb;
+  padding: 5px;
+  margin: 20px 0 8px 0;
+  font-size: 1.2em;
 }
 
 #comments dt {
-	margin: 1.5em 0 0 0;
-	padding: 5px 0 16px 0;
-	background: transparent url(img/comment-t.png) no-repeat bottom left;
+  margin: 1.5em 0 0 0;
+  padding: 5px 0 16px 0;
+  background: transparent url(img/comment-t.png) no-repeat bottom left;
 }
 #comments dt.me {
-	background: transparent url(img/commentmy-t.png)no-repeat bottom left;
+  background: transparent url(img/commentmy-t.png) no-repeat bottom left;
 }
 #comments a.comment-number {
-	display: block;
-	float: left;
-	width: 30px;
-	margin-right: 40px;
-	font-size: 1.2em;
+  display: block;
+  float: left;
+  width: 30px;
+  margin-right: 40px;
+  font-size: 1.2em;
 }
 #comments dd {
-	margin: 0;
-	padding: 1px 1em 0.5em 1em;
-	background: #fffad1 url(img/comment-b.png) no-repeat bottom left;
-	color:#6b6b6b;
+  margin: 0;
+  padding: 1px 1em 0.5em 1em;
+  background: #fffad1 url(img/comment-b.png) no-repeat bottom left;
+  color: #6b6b6b;
 }
 #comments dd.me {
-	background:#DCF7E7 url(img/commentmy-b.png) no-repeat bottom left;
-	color:#6b6b6b;
+  background: #dcf7e7 url(img/commentmy-b.png) no-repeat bottom left;
+  color: #6b6b6b;
 }
 #comments dd p {
-	margin: 0.5em 0;
-	line-height: 1.5em;
+  margin: 0.5em 0;
+  line-height: 1.5em;
 }
 
 .error {
-	margin: 20px 0 0;
-	padding: 10px 5px;
-	background: #ffcccc;
-	border: 2px solid red;
-	font-weight: bold;
+  margin: 20px 0 0;
+  padding: 10px 5px;
+  background: #ffcccc;
+  border: 2px solid red;
+  font-weight: bold;
 }
 
 /* Forms
 -------------------------------------------------------- */
 #comment-form {
-	padding-top: 10px;
+  padding-top: 10px;
 }
 
 #comment-form fieldset {
-	border: none;
+  border: none;
 }
 #comment-form fieldset p {
-	padding: 5px 0;
+  padding: 5px 0;
 }
 #comment-form fieldset p.field {
-	padding: 5px 0;
-	width: auto;
-	margin: 0;
-	clear: left;
+  padding: 5px 0;
+  width: auto;
+  margin: 0;
+  clear: left;
 }
 #comment-form p.form-help {
-	width: 60%;
-	margin: 0 0 0 30%;
-	font-style: italic;
+  width: 60%;
+  margin: 0 0 0 30%;
+  font-style: italic;
 }
 
 #comment-form p label {
-	width: auto;
+  width: auto;
 }
 #comment-form p.field label {
-	font-weight: bold;
-	display: block;
-	padding: 0 1% 0 0;
-	width: 29%;
-	float: left;
-	text-align: right;
+  font-weight: bold;
+  display: block;
+  padding: 0 1% 0 0;
+  width: 29%;
+  float: left;
+  text-align: right;
 }
-#comment-form input, #comment-form textarea {
-	font: 1em "Lucida Grande",Arial,sans-serif;
-	color: #000;
-	border: 1px solid #cdcdcd;
-	padding: 1px 2px;	
-	width: 68%;
+#comment-form input,
+#comment-form textarea {
+  font: 1em "Lucida Grande", Arial, sans-serif;
+  color: #000;
+  border: 1px solid #cdcdcd;
+  padding: 1px 2px;
+  width: 68%;
 }
 
 #comment-form p.remember {
-	margin: 0;
+  margin: 0;
 }
 #comment-form input#c_remember {
-	width: auto;
-	border: 0;
-	margin: 0 5px 0 30%;
+  width: auto;
+  border: 0;
+  margin: 0 5px 0 30%;
 }
 #comment-form input.preview {
-	margin-left: 30%;
+  margin-left: 30%;
 }
 
-#comment-form input.preview, #comment-form input.submit {
-	width: auto;
-	color: #4E9A60;
-	background: #fff;
-	font-size: 1em;
-	font-weight: bold;
-	text-transform: uppercase;
-	border: 1px solid #4E9A60;
+#comment-form input.preview,
+#comment-form input.submit {
+  width: auto;
+  color: #4e9a60;
+  background: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #4e9a60;
 }
-#comment-form input.preview:hover, #comment-form input.submit:hover {
-	background: #4E9A60;
-	color: #fff;
-	border: 1px solid #4E9A60;
+#comment-form input.preview:hover,
+#comment-form input.submit:hover {
+  background: #4e9a60;
+  color: #fff;
+  border: 1px solid #4e9a60;
 }
 
 a {
@@ -223,76 +239,115 @@ a {
   outline: none;
 }
 
-
-
 /** Sidebar doodles */
 .doodle-separator {
-	width: 150px;
-	height: 150px;	
-	margin: 4px auto;
-	border-style: none;
-	border-width: 0;
-	background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 4px auto;
+  border-style: none;
+  border-width: 0;
+  background-repeat: no-repeat;
 }
 
 .doodle-1 {
-	background-image: url("img/doodles/doodle1.png");
+  background-image: url("img/doodles/doodle1.png");
 }
 .doodle-2 {
-	background-image: url("img/doodles/doodle2.png");
+  background-image: url("img/doodles/doodle2.png");
 }
 .doodle-3 {
-	background-image: url("img/doodles/doodle3.png");
+  background-image: url("img/doodles/doodle3.png");
 }
 .doodle-4 {
-	background-image: url("img/doodles/doodle4.png");
+  background-image: url("img/doodles/doodle4.png");
 }
 .doodle-5 {
-	background-image: url("img/doodles/doodle5.png");
+  background-image: url("img/doodles/doodle5.png");
 }
 .doodle-6 {
-	background-image: url("img/doodles/doodle6.png");
+  background-image: url("img/doodles/doodle6.png");
 }
 .doodle-7 {
-	background-image: url("img/doodles/doodle7.png");
+  background-image: url("img/doodles/doodle7.png");
 }
 .doodle-8 {
-	background-image: url("img/doodles/doodle8.png");
+  background-image: url("img/doodles/doodle8.png");
 }
 
 /** Search form */
 .search-form {
-	width: 100%;
-	margin: auto;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: stretch;
-	gap: 4px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
 }
-.search-form label, .search-form input {
-	width: auto;
-	max-width: 100%;
+.search-form label,
+.search-form input {
+  width: auto;
+  max-width: 100%;
 }
-.search-form input[type=submit] {
-	background-color: #4e9a60;
-	color: white;
-	border-radius: 5%/30%;
-	border: 0.4px solid #333;
+.search-form input[type="submit"] {
+  background-color: #4e9a60;
+  color: white;
+  border-radius: 5%/30%;
+  border: 0.4px solid #333;
 }
 
 .item-list {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
 }
 
 .item {
-	flex: 1;
-	filter: sepia(1);
+  flex: 1;
 }
 
 .item:hover {
-	filter: sepia(0);
+  filter: sepia(1);
+}
+
+.day-date {
+    font-size: 11px;
+    margin: -37px 0 0px 135px;
+    text-align: right;
+    color: #6B6B6B;
+    border-bottom: 0.5px solid #4E9A60;
+}
+
+/** Sidebar archives list */
+.archive-year {
+  margin: 0;
+  padding: 4px 0;
+  border-top: 1px solid #d3373b;
+  line-height: 150%;
+}
+
+.archive-year ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0px 0;
+  border: none;
+}
+.archive-year li {
+  display: list-item;
+  margin: 0.5em 0 0 0;
+  padding: 0 0;
+  border: none;
+}
+.archive-year li a {
+  background-image: none;
+  padding-left: 21px;
+  color: #000;
+  text-decoration: none;
+  list-style: none;
+  list-style-position: outside;
+}
+
+.archive-year li a:hover {
+  color: #d3373b;
 }
