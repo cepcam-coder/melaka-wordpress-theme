@@ -222,3 +222,76 @@ a {
   text-decoration: none;
   outline: none;
 }
+
+
+
+/** Sidebar doodles */
+.doodle-separator {
+	width: 150px;
+	height: 150px;	
+	margin: 4px auto;
+	border-style: none;
+	border-width: 0;
+}
+
+.doodle-1 {
+	background-image: url("img/doodles/doodle1.png");
+}
+.doodle-2 {
+	background-image: url("img/doodles/doodle2.png");
+}
+.doodle-3 {
+	background-image: url("img/doodles/doodle3.png");
+}
+.doodle-4 {
+	background-image: url("img/doodles/doodle4.png");
+}
+.doodle-5 {
+	background-image: url("img/doodles/doodle5.png");
+}
+.doodle-6 {
+	background-image: url("img/doodles/doodle6.png");
+}
+.doodle-7 {
+	background-image: url("img/doodles/doodle7.png");
+}
+.doodle-8 {
+	background-image: url("img/doodles/doodle8.png");
+}
+
+/** Search form */
+.search-form {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 4px;
+}
+.search-form label, .search-form input {
+	width: auto;
+	max-width: 100%;
+}
+.search-form input[type=submit] {
+	background-color: #4e9a60;
+	color: white;
+	border-radius: 5%/30%;
+	border: 0.4px solid #333;
+}
+
+.item-list {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 4px;
+}
+
+.item {
+	flex: 1;
+	filter: sepia(1);
+}
+
+.item:hover {
+	filter: sepia(0);
+}
