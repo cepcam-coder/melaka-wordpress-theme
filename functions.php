@@ -126,3 +126,15 @@ function comics_list($count = 5) {
 
 /** Dont auto scaled  */
 add_filter( 'big_image_size_threshold', '__return_false' );
+
+
+/** Dont paginate year and month archives */
+function show_all_posts_in_date_archives( $query ) {
+    if ( !is_admin() && $query->is_main_query() ) {
+
+        if ( $query->is_month() || $query->is_year() ) {
+            $query->set( 'posts_per_page', -1 ); 
+        }
+    }
+}
+add_action( 'pre_get_posts', 'show_all_posts_in_date_archives' );

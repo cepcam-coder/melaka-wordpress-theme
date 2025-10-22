@@ -232,6 +232,7 @@ a {
 	margin: 4px auto;
 	border-style: none;
 	border-width: 0;
+	background-repeat: no-repeat;
 }
 
 .doodle-1 {
