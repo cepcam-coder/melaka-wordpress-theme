@@ -99,7 +99,8 @@
 
 
         <section class="sidebar-section">
-            <h4>Réseaux socaux, rss et contact</h4>
+            <h2><a href="mailto:melaka@mazette.media">Contact</a></h2>
+            <?php get_social_links() ?>
         </section>
         <hr class="doodle-separator doodle-7">
 

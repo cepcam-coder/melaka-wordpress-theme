@@ -1,4 +1,7 @@
 <?php
+/** 
+ * FIXME: clean this
+ */
 add_theme_support('post-thumbnails');
 function melaka_enqueue_styles() {
     wp_enqueue_style(
@@ -14,9 +17,11 @@ function melaka_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'melaka_enqueue_styles');
 
-
-/*  For books, and comics, we create a custom type */
-function create_livres_cpt() {
+/** -------------------------------------------------------------
+ *  Bandes dessinées
+ * 
+ **/
+function create_books_cpt() {
     $labels = array(
         'name' => 'Livres',
         'singular_name' => 'Livre',
@@ -43,44 +48,46 @@ function create_livres_cpt() {
 
     register_post_type('livres', $args);
 }
-add_action('init', 'create_livres_cpt');
 
 //  meta for book custom type
-function livres_add_custom_box() {
+function books_add_custom_box() {
     add_meta_box(
-        'livre_link_box',
+        'book_link_box',
         'Lien externe (éditeur, achat, etc.)',
-        'livres_link_box_html',
+        'books_link_box_html',
         'livres', // Doit être le nom du custom type
         'side'
     );
 }
-add_action('add_meta_boxes', 'livres_add_custom_box');
 
-function livres_link_box_html($post) {
-    $value = get_post_meta($post->ID, '_lien_livre', true);
+function books_link_box_html($post) {
+    $value = get_post_meta($post->ID, '_lien_book', true);
     ?>
-    <label for="livre_link_field">URL :</label><br>
-    <input type="url" id="livre_link_field" name="livre_link_field" value="<?php echo esc_attr($value); ?>" style="width:100%;">
+    <label for="book_link_field">URL :</label><br>
+    <input type="url" id="book_link_field" name="book_link_field" value="<?php echo esc_attr($value); ?>" style="width:100%;">
     <?php
 }
 
-function livres_save_postdata($post_id) {
-    if (array_key_exists('livre_link_field', $_POST)) {
+function books_save_postdata($post_id) {
+    if (array_key_exists('book_link_field', $_POST)) {
         update_post_meta(
             $post_id,
-            '_lien_livre',
-            esc_url_raw($_POST['livre_link_field'])
+            '_lien_book',
+            esc_url_raw($_POST['book_link_field'])
         );
     }
 }
-add_action('save_post', 'livres_save_postdata');
 
-// On garde par la box custom, trop compliquée
-function enlever_champs_personnalises_pour_livres() {
+
+// On ne garde pas la box custom, trop compliquée
+function remove_books_custom_box() {
     remove_meta_box('postcustom', 'livres', 'normal');
 }
-add_action('add_meta_boxes', 'enlever_champs_personnalises_pour_livres', 100);
+
+add_action('add_meta_boxes', 'books_add_custom_box');
+add_action('init', 'create_books_cpt');
+add_action('save_post', 'books_save_postdata');
+add_action('add_meta_boxes', 'remove_books_custom_box', 100);
 
 
 /**
@@ -232,3 +239,108 @@ function blogroll() {
         echo '<p>Aucun lien trouvé.</p>';
     }
 }
+
+
+/** -------------------------------------------------------------
+ *  Reseaux sociaux  
+ * 
+ **/
+
+function create_social_link_cpt() {
+    $labels = array(
+        'name' => 'Réseaux Sociaux',
+        'singular_name' => 'Réseau Social',
+        'menu_name' => 'Réseaux Sociaux',
+        'name_admin_bar' => 'Réseau social',
+        'add_new' => 'Ajouter un réseau social',
+        'add_new_item' => 'Ajouter un nouveau réseau social',
+        'edit_item' => 'Modifier le réseau social',
+        'new_item' => 'Nouveau réseau social',
+        'view_item' => 'Voir le réseau social',
+        'search_items' => 'Rechercher un réseau social',
+        'not_found' => 'Aucun réseau trouvé',
+        'not_found_in_trash' => 'Aucun réseau dans la corbeille',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true, 
+        'menu_icon' => 'dashicons-share', 
+        'supports' => array('title', 'thumbnail', 'custom-fields'),
+        'has_archive' => false,
+    );
+
+    register_post_type('social_links', $args);
+}
+
+
+function social_links_add_url_box() {
+    add_meta_box(
+        'social_links_link_box',
+        'Lien vers le profil',
+        'social_net_input_box',
+        'social_links', // Doit être le nom du custom type
+        'side'
+    );
+}
+
+function social_net_input_box($post) {
+    $value = get_post_meta($post->ID, '_social_net_link', true);
+    ?>
+    <label for="socialnet_link_field">URL :</label><br>
+    <input type="url" id="socialnet_link_field" name="socialnet_link_field" value="<?php echo esc_attr($value); ?>" style="width:100%;">
+    <?php
+}
+
+function socialnet_save_postdata($post_id) {
+    if (array_key_exists('socialnet_link_field', $_POST)) {
+        update_post_meta(
+            $post_id,
+            '_social_net_link',
+            esc_url_raw($_POST['socialnet_link_field'])
+        );
+    }
+}
+// On ne garde pas la box custom, trop compliquée
+function remove_custom_socialinks() {
+    remove_meta_box('postcustom', 'social_links', 'normal');
+}
+
+function get_social_links() {
+    $args = array(
+        'post_type'      => 'social_links',
+        'posts_per_page' => -1, 
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        echo '<ul class="social-links-list flex-row">';
+        while ($query->have_posts()) {
+            $query->the_post();
+            $url = get_post_meta(get_the_ID(), '_social_net_link', true);
+            $title = get_the_title();
+            $thumbnail = get_the_post_thumbnail(get_the_ID(), 'thumbnail', array('class' => 'social-link-icon'));
+
+            if ($url) {
+                echo '<li class="social-link-item"><a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
+                if ($thumbnail) {
+                    echo $thumbnail;
+                }
+                echo '</a></li>';
+            }
+        }
+        echo '</ul>';
+        wp_reset_postdata();
+    } else {
+        echo '<p>Aucun réseau social trouvé.</p>';
+    }
+}
+
+add_action('init', 'create_social_link_cpt');
+add_action('add_meta_boxes', 'remove_custom_socialinks', 100);
+add_action('save_post_social_links', 'socialnet_save_postdata');
+add_action('add_meta_boxes', 'social_links_add_url_box');
