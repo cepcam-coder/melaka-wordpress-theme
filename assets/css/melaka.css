@@ -333,7 +333,7 @@ a {
   padding: 0 0 0px 0;
   border: none;
 }
-.archive-year li{
+.archive-year li {
   display: list-item;
   margin: 0.5em 0 0 0;
   padding: 0 0;
@@ -377,7 +377,6 @@ a {
   background-image: url("img/tipeee.jpg");
 }
 
-
 .blogroll-list {
   padding: 2px 0;
 }
@@ -387,4 +386,33 @@ a {
   list-style-position: outside;
   border-top: 1px solid #d3373b;
   padding: 2px 0;
+}
+
+/** Social net */
+.social-links-list {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding-inline-start: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social-link-item img {
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
+  flex: 1;
+  list-style: none;
+}
+
+
+.social-link-item {
+  filter: opacity(0.8);
+}
+.social-link-item:hover {
+  filter: opacity(1);
 }

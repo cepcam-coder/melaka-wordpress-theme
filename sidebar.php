@@ -92,7 +92,7 @@
         </section>
         <hr class="doodle-separator doodle-5">
 
-        <section class="sidebar-section">        
+        <section class="sidebar-section">
             <?php blogroll(); ?>
         </section>
         <hr class="doodle-separator doodle-6">
@@ -103,6 +103,25 @@
             <?php get_social_links() ?>
         </section>
         <hr class="doodle-separator doodle-7">
+
+        <section class="sidebar-section">
+            <h2>S'abonner</h2>
+            <p>
+                <a href="<?php bloginfo('rss2_url'); ?>" title="Flux RSS des articles" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
+                        alt="RSS Articles" style="width:16px;height:16px;">
+                    Flux RSS des articles
+                </a>
+            </p>
+            <p>
+                <a href="<?php bloginfo('comments_rss2_url'); ?>" title="Flux RSS des commentaires" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
+                        alt="RSS Commentaires" style="width:16px;height:16px;">
+                    Flux RSS des commentaires
+                </a>
+            </p>
+        </section>
+        <hr class="doodle-separator doodle-8">
 
     </div>
 </aside>
