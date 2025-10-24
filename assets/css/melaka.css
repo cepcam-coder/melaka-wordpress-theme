@@ -239,39 +239,75 @@ a {
   outline: none;
 }
 
+
+.post-info-co {
+  clear: left;
+  margin: 20px 0 60px 0;
+  padding: 3px 0 3px 0.5em;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #bfbfbf;
+  background: #fbfbfb;
+}
+
+.post-info-co a {
+  color: #2b2b2b;
+  padding: 2px 10px 2px 18px;
+}
+
+.haut a {
+  float: right;
+  font-size: 9px;
+  color: #B7CCBE;
+  padding: 0;
+}
+
+.comment_count {
+  background: transparent url(img/comment.png) no-repeat 0 50%;
+}
+
 /** Sidebar doodles */
 .doodle-separator {
   width: 150px;
-  height: 150px;
-  margin: 4px auto;
+  margin: 4rem auto;
   border-style: none;
   border-width: 0;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .doodle-1 {
   background-image: url("img/doodles/doodle1.png");
+  height: 152px;
 }
 .doodle-2 {
   background-image: url("img/doodles/doodle2.png");
+  height: 99px;
 }
 .doodle-3 {
   background-image: url("img/doodles/doodle3.png");
+  height: 218px;
 }
 .doodle-4 {
   background-image: url("img/doodles/doodle4.png");
+  height: 99px;
 }
 .doodle-5 {
   background-image: url("img/doodles/doodle5.png");
+  height: 112px;
 }
 .doodle-6 {
   background-image: url("img/doodles/doodle6.png");
+  height: 235px;
 }
 .doodle-7 {
   background-image: url("img/doodles/doodle7.png");
+  height: 89px;
+
 }
 .doodle-8 {
   background-image: url("img/doodles/doodle8.png");
+  height: 85px;
 }
 
 /** Search form */
