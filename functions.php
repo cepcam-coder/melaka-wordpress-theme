@@ -4,6 +4,8 @@
  */
 add_theme_support('post-thumbnails');
 function melaka_enqueue_styles() {
+    wp_enqueue_script('jquery'); 
+    
     wp_enqueue_style(
         'melaka-style',
         get_stylesheet_uri()
@@ -13,6 +15,21 @@ function melaka_enqueue_styles() {
         get_theme_file_uri('/assets/css/melaka.css'),
         array(),
         wp_get_theme()->get('Version')
+    );
+    wp_enqueue_script(
+        'melaka-script',
+        get_theme_file_uri('/assets/js/jquery.parallax.js'),
+        array('jquery'), 
+        wp_get_theme()->get('Version'),
+        true 
+    );
+
+    wp_enqueue_script(
+        'melaka-parallax',
+        get_theme_file_uri('/assets/js/parallax_init.js'),
+        array('jquery'), 
+        null,
+        true 
     );
 }
 add_action('wp_enqueue_scripts', 'melaka_enqueue_styles');
@@ -344,3 +361,4 @@ add_action('init', 'create_social_link_cpt');
 add_action('add_meta_boxes', 'remove_custom_socialinks', 100);
 add_action('save_post_social_links', 'socialnet_save_postdata');
 add_action('add_meta_boxes', 'social_links_add_url_box');
+

@@ -452,3 +452,27 @@ a {
 .social-link-item:hover {
   filter: opacity(1);
 }
+
+
+/** Parallaxe **/
+.parallax-viewport {
+  position: relative;     /* relative, absolute, fixed */
+  overflow: hidden;
+}
+.parallax-layer {
+  position: absolute;
+}
+
+#top a {
+  color: transparent;
+  text-decoration: none;
+}
+
+#parallax {
+  position: relative;
+  overflow: hidden;
+  width: 950px;
+  height: 200px;
+  background-image: url(img/banner/melaka_banner_0.png);
+  background-position: left -10px bottom 0;
+}
