@@ -438,8 +438,8 @@ a {
 }
 
 .social-link-item img {
-  width: 25px;
-  height: 25px;
+  width: 75px;
+  height: 75px;
   border-radius: 2px;
   flex: 1;
   list-style: none;
