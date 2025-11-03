@@ -13,7 +13,7 @@
 
     <div id="page">
         <header id="top">
-            <a href="index.php">
+            <a href="<?php echo get_home_url(); ?>">
                 <!-- PARALLAX -->
                 <div id="parallax" class="parallax-viewport">
                     <div class="parallax-layer" style="width:1200px; height:200px;">
@@ -28,11 +28,11 @@
                         <img src="<?php echo get_theme_file_uri('/assets/css/img/banner/secondplan.png') ?>" alt=""
                             style="width:1200px; height:200px;" />
                     </div>
-                    <div class="parallax-layer" style="width:1200px; height:200px;">
+                    <div class="parallax-layer" style="width:980px; height:200px;">
                         <img src="<?php echo get_theme_file_uri('/assets/css/img/banner/premierplan.png') ?>" alt=""
-                            style="width:1200px; height:200px;" />
+                            style="width:980px; height:200px;" />
                     </div>
-                    <div class="parallax-layer" style="padding-left:900px;height:200px">
+                    <div class="parallax-layer" style="padding-left:950px;height:200px">
                         <img src="<?php echo get_theme_file_uri('/assets/css/img/random/rotate.php') ?>" alt=""                        
                     </div>
                 </div>

@@ -27,7 +27,6 @@
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h2>
 
-                        <p class="post-info">le <?php echo get_the_date('l j F Y'); ?> à <?php echo get_the_time(); ?></p>
 
                         <?php
                         the_content();
@@ -35,6 +34,21 @@
                         if (comments_open() || get_comments_number()) {
                             comments_template();
                         }
+
+
+                        $categories = get_the_category();
+                        if ( ! empty( $categories ) ) {
+                            foreach ( $categories as $category ) {
+                                if ( $category->slug == 'uncategorized' ) {
+                                    continue;
+                                }
+                                if ( $category->slug == 'non-classe' ) {
+                                    continue;
+                                }
+                            echo '<a class="category-link"  href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a> ';
+                            }
+                        }
+                        
                     } else { ?>
                         <div class="item">
                             <h2 class="post-title">
@@ -47,6 +61,7 @@
                             <p class="post-info">
                                 <?php echo get_comments_number(); ?> commentaire<?php if (get_comments_number() > 1)
                                         echo 's'; ?>
+                                    
                             </p>
                             <p class="day-date"><?php echo get_the_date('l j F Y'); ?> à <?php echo get_the_time(); ?></p>
                         </div>

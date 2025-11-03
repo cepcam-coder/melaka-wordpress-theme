@@ -50,6 +50,20 @@
             endif;
             ?>
             <?php
+            $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+            foreach ( $categories as $category ) {
+                if ( $category->slug == 'uncategorized' ) {
+                    continue;
+                }
+                if ( $category->slug == 'non-classe' ) {
+                    continue;
+                }
+            echo '<a class="category-link"  href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a> ';
+            }
+            }
+            ?>
+            <?php
                 /** Comments */
                 if ( comments_open() || get_comments_number() ) :
                     comments_template();

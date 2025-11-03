@@ -26,7 +26,27 @@
                         </span>
                         <a class="comment_count" href="<?php echo get_comments_link(); ?>"><?php echo get_comments_number(); ?>
                             commentaire<?php if (get_comments_number() > 1)
-                                echo 's'; ?></a>
+                                echo 's'; ?>
+                        </a>
+
+                        
+                        <span>
+                        <?php
+                            $categories = get_the_category();
+                            if ( ! empty( $categories ) ) {
+                            foreach ( $categories as $category ) {
+                                if ( $category->slug == 'uncategorized' ) {
+                                    continue;
+                                }
+                                if ( $category->slug == 'non-classe' ) {
+                                    continue;
+                                }
+                            echo '<a class="category-link"  href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a> ';
+                            }
+                            }
+                        ?>
+                        </span>
+
                     </p>
                 <?php endwhile;
             endif;
