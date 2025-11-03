@@ -267,8 +267,13 @@ a {
 }
 
 /** Sidebar doodles */
+.link-image:hover {
+  filter: hue-rotate(40deg);
+}
+
 .doodle-separator {
   width: 150px;
+  display: block;
   margin: 4rem auto;
   border-style: none;
   border-width: 0;

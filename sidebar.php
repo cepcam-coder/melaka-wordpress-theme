@@ -102,7 +102,7 @@
             <h2><a href="mailto:melaka@mazette.media">Contact</a></h2>
             <?php get_social_links() ?>
         </section>
-        <hr class="doodle-separator doodle-7">
+      <a class="doodle-separator link-image" href="https://www.instagram.com/melakatricote/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/css/img/doodles/doodle7.png"/></a>
 
         <section class="sidebar-section">
             <h2>S'abonner</h2>
