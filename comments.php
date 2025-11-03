@@ -21,14 +21,15 @@ if ( post_password_required() ) {
                 $GLOBALS['comment'] = $comment;
                 $count++;
                 ?>
-                <dt id="c<?php comment_ID(); ?>" class="<?php echo ($count % 2 == 1 ? 'odd' : 'even') . ($count == 1 ? ' first' : ''); ?>">
+                <dt id="c<?php comment_ID(); ?>" class="<?php echo ($count % 2 == 1 ? 'odd' : 'even') . ($count == 1 ? ' first' : ''); ?> ">
                     <a href="#c<?php comment_ID(); ?>" class="comment-number"><?php echo $count; ?>.</a>
                     <?php printf(
-                        'Le %1$s, %2$s par %3$s',
+                        'Le %1$s, %2$s',
                         get_comment_date('l j F Y'),
                         get_comment_time(),
-                        get_comment_author()
+                 
                     ); ?>
+                    par <span <?php comment_class(); ?>><?php comment_author()?></span>      
                 </dt>
                 <dd class="<?php echo ($count % 2 == 1 ? 'odd' : 'even') . ($count == 1 ? ' first' : ''); ?>">
                     <?php comment_text(); ?>

@@ -5,7 +5,7 @@
         <section class="sidebar-section">
             <?php get_search_form(); ?>
         </section>
-        <hr class="doodle-separator doodle-1">
+        <hr class="doodle-separator doodle-3">
 
 
         <section class="sidebar-section">
@@ -55,7 +55,7 @@
             <h2>Albums</h2>
             <?php comics_list(3) ?>
         </section>
-        <hr class="doodle-separator doodle-3">
+        <hr class="doodle-separator doodle-1">
 
 
         <section class="sidebar-section">

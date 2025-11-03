@@ -127,7 +127,7 @@ function comics_list($count = 5) {
             $livres->the_post();
 
             $titre = get_the_title();
-            $image = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
+            $image = get_the_post_thumbnail(get_the_ID(), 'full', array('class' => 'book-cover'));
 
 
             $lien = get_post_meta(get_the_ID(), '_lien_livre', true);
@@ -361,4 +361,5 @@ add_action('init', 'create_social_link_cpt');
 add_action('add_meta_boxes', 'remove_custom_socialinks', 100);
 add_action('save_post_social_links', 'socialnet_save_postdata');
 add_action('add_meta_boxes', 'social_links_add_url_box');
+
 

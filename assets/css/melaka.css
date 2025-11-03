@@ -239,6 +239,10 @@ a {
   outline: none;
 }
 
+.bypostauthor {
+  color:#4e9a60;
+  font-weight: bolder;
+}
 
 .post-info-co {
   clear: left;
@@ -391,6 +395,11 @@ a {
 
 .archive-year li a:hover {
   color: #d3373b;
+}
+
+.book-cover {
+  width: 160px;
+  height: auto;
 }
 
 /** sidebar hack to display  picture */
