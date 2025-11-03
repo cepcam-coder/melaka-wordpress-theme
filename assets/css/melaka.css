@@ -484,6 +484,18 @@ a {
   width:50%;
   height: auto;
 }
+
+.big-letter {
+    font-size: 150px;
+    line-height: 1;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+    color: #333;
+    margin-right: 20px;                
+}
+
+.big-letter:hover {
+  color: #555;
+}
 /** Parallaxe **/
 .parallax-viewport {
   position: relative; /* relative, absolute, fixed */

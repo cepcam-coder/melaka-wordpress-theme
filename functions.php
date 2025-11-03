@@ -363,3 +363,14 @@ add_action('save_post_social_links', 'socialnet_save_postdata');
 add_action('add_meta_boxes', 'social_links_add_url_box');
 
 
+function get_random_post_link() {
+    $random_post = get_posts([
+        'orderby'        => 'rand',
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+    ]);
+    if ( ! empty( $random_post ) ) {
+        return get_permalink( $random_post[0]->ID );
+    }
+    return home_url(); 
+}

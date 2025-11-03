@@ -6,8 +6,15 @@
             <?php get_search_form(); ?>
         </section>
         <hr class="doodle-separator doodle-3">
-
-
+        <section>
+            <p>
+                <a class="flex-icon" href="<?php echo esc_url( get_random_post_link() ); ?>" title="Lire une note aléatoire"
+                style="display: flex; align-items: center; text-decoration: none;">
+                <span class="big-letter">?</span>
+                <span style="font-size: 20px; color: #000;">Une note au hasard</span>
+                </a>
+            </p>
+        </section>
         <section class="sidebar-section">
             <h4 class="brown">Archives</h4>
             <?php
@@ -105,7 +112,6 @@
       <a class="doodle-separator link-image" href="https://www.instagram.com/melakatricote/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/css/img/doodles/doodle7.png"/></a>
 
         <section class="sidebar-section">
-            <h2>S'abonner</h2>
             <p >
                 <a class="flex-icon" href="<?php bloginfo('rss2_url'); ?>" title="Flux RSS des articles" target="_blank">
                     <img class="social-link-item" src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
