@@ -106,18 +106,18 @@
 
         <section class="sidebar-section">
             <h2>S'abonner</h2>
-            <p>
-                <a href="<?php bloginfo('rss2_url'); ?>" title="Flux RSS des articles" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
-                        alt="RSS Articles" style="width:16px;height:16px;">
-                    Flux RSS des articles
+            <p >
+                <a class="flex-icon" href="<?php bloginfo('rss2_url'); ?>" title="Flux RSS des articles" target="_blank">
+                    <img class="social-link-item" src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
+                        alt="RSS Articles" >
+                    <span>Flux RSS des articles</span>
                 </a>
             </p>
             <p>
-                <a href="<?php bloginfo('comments_rss2_url'); ?>" title="Flux RSS des commentaires" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
-                        alt="RSS Commentaires" style="width:16px;height:16px;">
-                    Flux RSS des commentaires
+                <a class="flex-icon" href="<?php bloginfo('comments_rss2_url'); ?>" title="Flux RSS des commentaires" target="_blank">
+                    <img class="social-link-item"  src="<?php echo get_template_directory_uri(); ?>/assets/css/img/rss-icon.png"
+                        alt="RSS Commentaires" >
+                   <span>Flux RSS des commentaires</span>
                 </a>
             </p>
         </section>
