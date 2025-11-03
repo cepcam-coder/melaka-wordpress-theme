@@ -357,12 +357,6 @@ function get_social_links() {
     }
 }
 
-add_action('init', 'create_social_link_cpt');
-add_action('add_meta_boxes', 'remove_custom_socialinks', 100);
-add_action('save_post_social_links', 'socialnet_save_postdata');
-add_action('add_meta_boxes', 'social_links_add_url_box');
-
-
 function get_random_post_link() {
     $random_post = get_posts([
         'orderby'        => 'rand',
@@ -374,3 +368,39 @@ function get_random_post_link() {
     }
     return home_url(); 
 }
+
+
+
+
+function theme_enqueue_seasonal_styles() {
+
+    wp_enqueue_style('theme-style', get_stylesheet_uri());
+    $month = date('n'); 
+    $season = '';
+
+    if ($month == 12 || $month <= 2) {
+        $season = 'winter';
+    } elseif ($month >= 3 && $month <= 5) {
+        $season = 'spring';
+    } elseif ($month >= 6 && $month <= 8) {
+        $season = 'summer';
+    } else {
+        $season = 'autumn';
+    }
+
+    $seasonal_css_path = get_template_directory() . "/assets/css/{$season}.css";
+    $seasonal_css_uri  = get_template_directory_uri() . "/assets/css/{$season}.css";
+
+    if ( file_exists( $seasonal_css_path ) ) {
+        wp_enqueue_style("theme-style-{$season}", $seasonal_css_uri, ['theme-style'], null);
+    }
+}
+
+add_action('init', 'create_social_link_cpt');
+add_action('add_meta_boxes', 'remove_custom_socialinks', 100);
+add_action('save_post_social_links', 'socialnet_save_postdata');
+add_action('add_meta_boxes', 'social_links_add_url_box');
+
+
+
+add_action('wp_enqueue_scripts', 'theme_enqueue_seasonal_styles');
