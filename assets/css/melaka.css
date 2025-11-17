@@ -131,6 +131,13 @@ hr {
   .archive-year li a {
     padding-left: 21px;
   }
+  .day-date {
+    font-size: 11px;
+    margin: -37px 0 0px 135px;
+  }
+  .post-title {
+    font-size: 14px;
+  }
 }
 /*********************************************************/
 
@@ -207,6 +214,7 @@ h2 {
 }
 
 #main {
+  padding: 8px;
   background-color: white;
 }
 
@@ -226,7 +234,7 @@ h2 {
 /** Les petits headers avant le post */
 .post-title {
   color: #004a80;
-  font-size: 16px;
+  font-size: 14px;
   margin: 30px 0px 0px 0px;
 }
 .avatar {
@@ -534,8 +542,8 @@ a {
 }
 
 .day-date {
-  font-size: 11px;
-  margin: -37px 0 0px 135px;
+  font-size: 8px;
+  margin: -30px 0 0px 135px;
   text-align: right;
   color: #6b6b6b;
   border-bottom: 0.5px solid #4e9a60;
