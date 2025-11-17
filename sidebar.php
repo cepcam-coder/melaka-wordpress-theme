@@ -1,4 +1,4 @@
-<aside>
+<aside id="sidebar">
 
     <div id="blognav">
 
