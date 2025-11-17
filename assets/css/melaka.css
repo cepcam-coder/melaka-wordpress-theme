@@ -9,6 +9,11 @@ body {
   font: 62.5% "Lucida Grande", Arial, sans-serif; /* verdana, arial, helvetica, sans-serif */
 }
 
+hr {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 0;
+}
 /** Layout */
 #container {
   width: 100%;
@@ -28,30 +33,30 @@ body {
 }
 
 .parralax-1200x200 {
-  width: calc( 100% * 1200/var(--parallax-base));
-  height: 100% ;
+  width: calc(100% * 1200 / var(--parallax-base));
+  height: 100%;
 }
 
 .parralax-1100x200 {
-  width: calc( 100% * 1100/var(--parallax-base));
-  height: 100% ;
+  width: calc(100% * 1100 / var(--parallax-base));
+  height: 100%;
 }
 
-
 .parralax-980x200 {
-  width: calc( 100% * 980/var(--parallax-base));
-  height: 100% ;
+  width: calc(100% * 980 / var(--parallax-base));
+  height: 100%;
 }
 
 .parralax-950x200 {
-  width: calc( 100% * 950/var(--parallax-base));
-  height: 100% ;
+  width: calc(100% * 950 / var(--parallax-base));
+  height: 100%;
 }
 
 /** End of parallax */
 #wrapper {
-  overflow: hidden;
   display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
   gap: 5px;
 }
 
@@ -60,7 +65,7 @@ body {
 }
 
 #sidebar {
-  width: 100%;
+  width: 20%;
   background-color: white;
 }
 
@@ -68,17 +73,7 @@ body {
   width: 100%;
 }
 
-
-
-.doodle-separator {
-  width: 150px;
-}
-.book-cover {
-  width: 160px;
-  height: auto;
-}
-
-.wp-block-image img {
+.size-full img,.overheight img {
   width: auto;
   max-width: 100%;
   height: auto;
@@ -94,30 +89,47 @@ body {
     padding: 0 25px;
   }
 
+  .big-letter {
+    font-size: 150px;
+    line-height: 1;
+    font-family: "Comic Sans MS", "Comic Neue", cursive;
+    color: #A33;
+    margin-right: 20px;
+  }
 }
 
 /** sidebar hack to display  picture */
+
+.big-letter {
+  color: #3A3;
+  font-size: 15px;
+  line-height: 1;
+  font-family: "Comic Sans MS", "Comic Neue", cursive;
+  color: #333;
+  margin-right: 5px;
+}
+
 .laec {
   display: block;
-  width: 169px;
-  height: 338px;
-  background-size: cover;
+  width: calc(100% * 170 / 200);
+  height: calc(338px * 170 / 200);
+  background-size: contain;
   background-image: url("img/laecBDmini.png");
 }
 
 .mazette {
   display: block;
-  width: 170px;
-  height: 91px;
-  background-size: cover;
+  width: calc(100% * 150 / 200);
+  height: calc(91px * 170 / 200);
+  background-size: contain;
   background-image: url("img/mazette170.jpg");
 }
 
 .tipee {
   display: block;
-  width: 170px;
-  height: 430px;
-  background-size: cover;
+  width: calc(100% * 150 / 200);
+  height: calc(430px * 170 / 200);
+  background-size: contain;
   background-image: url("img/tipeee.jpg");
 }
 
@@ -380,37 +392,51 @@ a {
   background-position: center;
 }
 
+.book-cover {
+  height: calc(160px * 150 / 200);
+  width: 75px;
+  background-size: contain;
+}
+
+.doodle-separator {
+  /** All doodle are 150px wide on the original sidebar design 
+   *  where the sidebar is 200px
+   */
+  width: calc(100% * 150 / 200);
+  background-size: contain;
+}
+
 .doodle-1 {
   background-image: url("img/doodles/doodle1.png");
-  height: 152px;
+  height: calc(152px * 150 / 200);
 }
 .doodle-2 {
   background-image: url("img/doodles/doodle2.png");
-  height: 99px;
+  height: calc(99px * 150 / 200);
 }
 .doodle-3 {
   background-image: url("img/doodles/doodle3.png");
-  height: 218px;
+  height: calc(218px * 150 / 200);
 }
 .doodle-4 {
   background-image: url("img/doodles/doodle4.png");
-  height: 99px;
+  height: calc(99px * 150 / 200);
 }
 .doodle-5 {
   background-image: url("img/doodles/doodle5.png");
-  height: 112px;
+  height: calc(112px * 150 / 200);
 }
 .doodle-6 {
   background-image: url("img/doodles/doodle6.png");
-  height: 235px;
+  height: calc(235px * 150 / 200);
 }
 .doodle-7 {
   background-image: url("img/doodles/doodle7.png");
-  height: 89px;
+  height: calc(89px * 150 / 200);
 }
 .doodle-8 {
   background-image: url("img/doodles/doodle8.png");
-  height: 85px;
+  height: calc(85px * 150 / 200);
 }
 
 /** Search form */
@@ -538,17 +564,10 @@ a {
 }
 
 .flex-icon img {
-  width:50%;
+  width: 50%;
   height: auto;
 }
 
-.big-letter {
-    font-size: 150px;
-    line-height: 1;
-    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
-    color: #333;
-    margin-right: 20px;                
-}
 
 .big-letter:hover {
   color: #555;

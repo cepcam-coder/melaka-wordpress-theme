@@ -11,7 +11,7 @@
                 <a class="flex-icon" href="<?php echo esc_url( get_random_post_link() ); ?>" title="Lire une note aléatoire"
                 style="display: flex; align-items: center; text-decoration: none;">
                 <span class="big-letter">?</span>
-                <span style="font-size: 20px; color: #000;">Une note au hasard</span>
+                <span class="big-letter">Une note au hasard</span>
                 </a>
             </p>
         </section>
