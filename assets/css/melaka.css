@@ -455,41 +455,49 @@ a {
   /** All doodle are 150px wide on the original sidebar design 
    *  where the sidebar is 200px
    */
-  width: calc(100% * 150 / 200);
+  width: 100%;
   background-size: contain;
 }
 
 .doodle-1 {
   background-image: url("img/doodles/doodle1.png");
-  height: calc(152px * 150 / 200);
+  aspect-ratio: 3/4 ;
+  height: auto;
 }
 .doodle-2 {
   background-image: url("img/doodles/doodle2.png");
-  height: calc(99px * 150 / 200);
+  aspect-ratio: 2/1 ;
+  height: auto;
 }
 .doodle-3 {
   background-image: url("img/doodles/doodle3.png");
-  height: calc(218px * 150 / 200);
+  aspect-ratio: 150/218 ;
+  height: auto;
 }
 .doodle-4 {
   background-image: url("img/doodles/doodle4.png");
-  height: calc(99px * 150 / 200);
+  aspect-ratio: 150/98 ;
+  height: auto;
 }
 .doodle-5 {
   background-image: url("img/doodles/doodle5.png");
-  height: calc(112px * 150 / 200);
+  aspect-ratio: 1 ;
+  height: auto;
 }
 .doodle-6 {
   background-image: url("img/doodles/doodle6.png");
-  height: calc(235px * 150 / 200);
+  aspect-ratio: 150/235 ;
+  height: auto;
 }
 .doodle-7 {
   background-image: url("img/doodles/doodle7.png");
-  height: calc(89px * 150 / 200);
+  aspect-ratio: 150/89 ;
+  height: auto;
 }
 .doodle-8 {
   background-image: url("img/doodles/doodle8.png");
-  height: calc(85px * 150 / 200);
+  aspect-ratio: 150/90 ;
+  height: auto;
 }
 .doodle-9 {
   width: 80%;
