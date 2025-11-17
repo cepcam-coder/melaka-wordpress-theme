@@ -145,27 +145,33 @@ hr {
   margin-right: 5px;
 }
 
+.link-thumb {
+  margin: auto;
+}
 .laec {
   display: block;
-  width: calc(100% * 170 / 200);
-  height: calc(338px * 170 / 200);
-  background-size: contain;
+  width:80%;
+  aspect-ratio: 1/2;
+  margin: auto;
+  background-size: cover;
   background-image: url("img/laecBDmini.png");
 }
 
 .mazette {
   display: block;
-  width: calc(100% * 150 / 200);
-  height: calc(91px * 170 / 200);
-  background-size: contain;
+  width:80%;
+  aspect-ratio: 170/91;
+  margin: auto;
+  background-size: cover;
   background-image: url("img/mazette170.jpg");
 }
 
 .tipee {
   display: block;
-  width: calc(100% * 150 / 200);
-  height: calc(430px * 170 / 200);
-  background-size: contain;
+  width:80%;
+  aspect-ratio: 17/43;
+  margin: auto;
+  background-size: cover;
   background-image: url("img/tipeee.jpg");
 }
 
@@ -336,7 +342,7 @@ h2 {
   color: #000;
   border: 1px solid #cdcdcd;
   padding: 1px 2px;
-  width: 100%;
+  width: 90%;
 }
 
 #comment-form p.remember {
@@ -427,10 +433,14 @@ a {
   background-position: center;
 }
 
+.book-presentation {
+  width: 100%;
+}
 .book-cover {
-  height: calc(160px * 150 / 200);
-  width: 75px;
-  background-size: contain;
+  margin: auto;
+  width: 100%;
+  aspect-ratio: 265/363 !important;
+  height: auto !important;
 }
 
 .doodle-separator {

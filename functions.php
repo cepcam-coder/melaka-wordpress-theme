@@ -122,7 +122,7 @@ function comics_list($count = 5) {
     $livres = new WP_Query($args);
 
     if ($livres->have_posts()) {
-        echo '<div>';
+        echo '<div class="book-presentation">';
         while ($livres->have_posts()) {
             $livres->the_post();
 
@@ -133,12 +133,12 @@ function comics_list($count = 5) {
             $lien = get_post_meta(get_the_ID(), '_lien_livre', true);
             if (!$lien) $lien = '#'; // fallback
 
-            echo '<div>';
+   
             echo '<a href="' . esc_url($lien) . '" target="_blank">';
             echo $image;
             echo '<div>';
             echo '<h4>' . esc_html($titre) . '</h4>';
-            echo '</div></a></div>';
+            echo '</div></a>';
         }
         echo '</div>';
         wp_reset_postdata();

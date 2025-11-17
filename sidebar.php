@@ -68,11 +68,9 @@
     <section class="sidebar-section">
         <p>Pour télécharger le PDF en haute définition de la BD "L'Avenir en commun ?", cliquez sur l'image !</p>
 
-        <figure style="float: left; margin: 0 1em 1em 0;"><a class="laec"
+        <figure><a class="laec"
                 href="https://melaka.free.fr/JLM2017/LAECBD2022.pdf">
             </a>
-
-            <figcaption>laecBDmini.png, fév. 2022</figcaption>
         </figure>
     </section>
     <section class="sidebar-section">
