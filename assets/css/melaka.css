@@ -428,7 +428,7 @@ a {
 }
 
 /** Sidebar doodles */
-.link-image:hover {
+.doodle-7-link:hover {
   filter: hue-rotate(40deg);
 }
 
@@ -505,10 +505,12 @@ a {
   aspect-ratio: 1;
 }
 
-.link-image {
-  height: calc(89px * 150 / 200);
+.doodle-7-link {
+  margin: 4px 0;
+  height: auto !important;
+  aspect-ratio: 16/9 !important;
 }
-.link-image img {
+.doodle-7-link img {
   width: 100%;
   height: auto;
 }
@@ -634,6 +636,7 @@ a {
   flex-direction: row;
   gap: 1em;
   align-items: center;
+  justify-content: center;
 }
 
 .flex-icon img {
